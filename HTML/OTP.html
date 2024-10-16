@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Code Validation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 50px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .otp-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    .inputContainer {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        -moz-appearance: textfield; /* For Firefox */
+    }
+
+    /* Remove spinner buttons for Chrome, Safari, and Opera */
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Remove spinner buttons for Edge, IE */
+    input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #confirm-button {
+        background-color: #000;
+        color: white;
+        border: 1px solid #000;
+    }
+
+    #cancel-button {
+        color: #FF001F;
+        background-color: white;
+        border: 1px solid #FF001F;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .container {
+            padding: 30px;
+        }
+
+        .inputContainer {
+            max-width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        button {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        .button-container{
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 20px;
+        }
+
+        .inputContainer {
+            max-width: 250px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        button {
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+        .button-container{
+            justify-content: center;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Validation SA-04</h1>
+        <div class="otp-container">
+            <div class="inputContainer">
+                <p>Enter OTP Code:</p>
+                <input type="number" id="otp-code" placeholder="Enter OTP code" min="0" pattern="\d*">
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="cancel-button">Annuler</button>
+            <button id="confirm-button">Continuer</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    const confirmButton = document.getElementById('confirm-button');
+    const cancelButton = document.getElementById('cancel-button');
+
+    confirmButton.addEventListener('click', () => {
+        window.location.href = './final.html';
+    });
+
+    cancelButton.addEventListener('click', () => {
+        window.location.href = 'valid.html';
+    });
+</script>
+
+</html>
